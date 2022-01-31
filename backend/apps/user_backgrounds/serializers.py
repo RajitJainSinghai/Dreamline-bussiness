@@ -27,4 +27,4 @@ class UserBackgroundSerializer(serializers.ModelSerializer):
         if bool(errors):
             raise serializers.ValidationError(errors)
 
-        return data
+        return data;

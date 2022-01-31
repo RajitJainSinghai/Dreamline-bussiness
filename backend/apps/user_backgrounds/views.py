@@ -142,6 +142,7 @@ class UserBackgroundAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
 class UserBackgroundList(CustomLoginRequiredMixin, generics.ListAPIView):
     queryset = UserBackground.objects.all()
     serializer_class = UserBackgroundSerializer
+    depth = 1
 
     def get(self, request, *args, **kwargs):
         self.queryset=UserBackground.objects.order_by('-created_at').filter(user=request.login_user)
